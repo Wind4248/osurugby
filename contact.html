@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Ohio State Rugby</title>
+  <meta name="description" content="Contact Ohio State Men's Rugby. Interested in joining the team, connecting with alumni, or supporting the program? Reach out here.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/osu-rugby-alumni-logo.jpeg" alt="OSU Rugby">
+        <span>Ohio State Rugby</span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Get in touch with Ohio State Rugby</p>
+    </div>
+  </div>
+
+  <!-- CONTACT OPTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="card-grid" style="max-width:900px; margin:0 auto;">
+
+        <!-- PROSPECTIVE PLAYERS -->
+        <div class="card">
+          <div class="card-img" style="display:flex; align-items:center; justify-content:center; background:var(--scarlet); color:white; font-family:'Oswald',sans-serif; font-size:1.5rem; letter-spacing:0.05em;">JOIN THE TEAM</div>
+          <div class="card-body">
+            <h3>Prospective Players</h3>
+            <p style="margin-bottom:12px;">Interested in playing rugby at Ohio State? No experience required — we welcome walk-ons at every level. Contact our coaching staff or stop by practice.</p>
+            <p><strong>Head Coach:</strong> Tom Rooney</p>
+            <p><a href="mailto:tomrooney1@gmail.com">tomrooney1@gmail.com</a></p>
+          </div>
+        </div>
+
+        <!-- ALUMNI -->
+        <div class="card" id="alumni">
+          <div class="card-img" style="display:flex; align-items:center; justify-content:center; background:var(--gray-dark); color:white; font-family:'Oswald',sans-serif; font-size:1.5rem; letter-spacing:0.05em;">ALUMNI SOCIETY</div>
+          <div class="card-body">
+            <h3>Alumni &amp; Former Players</h3>
+            <p style="margin-bottom:12px;">Reconnect with the Men's Rugby Alumni Society. Join for events, the Hall of Fame Weekend, and support current players through the Gavin Gill Scholarship Fund.</p>
+            <p><a href="mailto:osurfcalumni@gmail.com">osurfcalumni@gmail.com</a></p>
+            <p><a href="mailto:mensrugbysociety@osu.edu">mensrugbysociety@osu.edu</a></p>
+          </div>
+        </div>
+
+        <!-- GENERAL -->
+        <div class="card">
+          <div class="card-img" style="display:flex; align-items:center; justify-content:center; background:#333; color:white; font-family:'Oswald',sans-serif; font-size:1.5rem; letter-spacing:0.05em;">GENERAL</div>
+          <div class="card-body">
+            <h3>General Inquiries</h3>
+            <p style="margin-bottom:12px;">For sponsorships, media requests, or general questions about the program.</p>
+            <p><strong>Club President:</strong> John Meek</p>
+            <p><strong>Vice President:</strong> Connor Fairfield</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="section section-gray">
+    <div class="container" style="max-width:600px;">
+      <h2 class="section-title">Send a Message</h2>
+      <form action="https://formspree.io/f/PLACEHOLDER" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">I am a...</label>
+          <select id="subject" name="subject">
+            <option value="prospective-player">Prospective Player</option>
+            <option value="alumni">Alumni / Former Player</option>
+            <option value="parent">Parent</option>
+            <option value="media">Media</option>
+            <option value="sponsor">Sponsor</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-scarlet" style="width:100%;">Send Message</button>
+      </form>
+      <p style="text-align:center; margin-top:12px; font-size:0.8rem; color:var(--gray-mid);">Form requires Formspree setup. Contact the site admin to activate.</p>
+    </div>
+  </section>
+
+  <!-- SOCIAL & LINKS -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Find Us Online</h2>
+      <div class="btn-group" style="justify-content:center; flex-wrap:wrap;">
+        <a href="https://www.instagram.com/buckeyerugby/" class="btn btn-outline" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/OhioStateRugby/" class="btn btn-outline" target="_blank">Facebook</a>
+        <a href="https://x.com/OSUrugby" class="btn btn-outline" target="_blank">X / Twitter</a>
+        <a href="https://www.facebook.com/OSURFCALUMNI/" class="btn btn-outline" target="_blank">Alumni Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE CTA -->
+  <section class="section section-scarlet">
+    <div class="container text-center">
+      <h2 style="margin-bottom:16px;">Support Buckeye Rugby</h2>
+      <p style="max-width:600px; margin:0 auto 24px; opacity:0.9;">Alumni society donations and player dues fund everything — equipment, travel, league fees, and referee costs. Consider a monthly gift of $19.66 (our founding year) to support the Gavin Gill Memorial Scholarship Fund.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="https://www.osu.edu/alumni/get-involved/clubs-societies/mens-rugby-alumni-society" class="btn btn-white" target="_blank">Donate via OSU Alumni</a>
+        <a href="https://www.gavingill.org/" class="btn btn-outline" style="border-color:#fff; color:#fff;" target="_blank">Gavin Gill Foundation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ohio State Rugby</h4>
+          <p style="font-size:0.9rem; margin-bottom:12px;">The Ohio State University<br>Men's Rugby Football Club<br>Columbus, Ohio</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/buckeyerugby/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/OhioStateRugby/" target="_blank">Facebook</a>
+            <a href="https://x.com/OSUrugby" target="_blank">X/Twitter</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="roster.html">Roster</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Alumni Society</h4>
+          <ul>
+            <li><a href="mailto:osurfcalumni@gmail.com">osurfcalumni@gmail.com</a></li>
+            <li><a href="https://www.facebook.com/OSURFCALUMNI/" target="_blank">Alumni Facebook</a></li>
+            <li><a href="https://www.osu.edu/alumni/get-involved/clubs-societies/mens-rugby-alumni-society" target="_blank">OSU Alumni Assoc.</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Coaching Staff</h4>
+          <ul>
+            <li>Tom Rooney — Head Coach</li>
+            <li>Peter Malcolm — Coach</li>
+            <li>Allan Hanson — Coach</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ohio State University Men's Rugby Football Club. Not affiliated with Ohio State Athletics.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
