@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: Wind4248/osurugby
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Match Recap", "Announcement", "Alumni", "Season Review", "Player Spotlight"] }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "roster"
+    label: "Players"
+    folder: "_data/players"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Year", name: "year", widget: "select", options: ["Freshman", "Sophomore", "Junior", "Senior", "5th Year"] }
+      - { label: "Hometown", name: "hometown", widget: "string" }
+      - { label: "Major", name: "major", widget: "string", required: false }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Jersey Number", name: "number", widget: "number", required: false }
+
+  - name: "schedule"
+    label: "Matches"
+    folder: "_data/matches"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Opponent", name: "opponent", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Home/Away", name: "home_away", widget: "select", options: ["Home", "Away", "Neutral"] }
+      - { label: "Result", name: "result", widget: "string", required: false, hint: "e.g. W 48-5 or L 17-25. Leave blank for upcoming." }
+      - { label: "Competition", name: "competition", widget: "select", options: ["Big Ten", "Midwest D1A", "CRAA Challenger Cup", "Non-Conference", "7s Tournament"] }
+
+  - name: "gallery"
+    label: "Gallery Albums"
+    folder: "_data/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Album Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Match Day", "Team", "Alumni", "Hall of Fame", "History", "Training"] }
+      - { label: "Cover Photo", name: "cover", widget: "image" }
+      - { label: "Photos", name: "photos", widget: "list", field: { label: "Photo", name: "photo", widget: "image" } }
+      - { label: "Description", name: "description", widget: "string", required: false }

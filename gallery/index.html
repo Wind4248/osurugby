@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery — Ohio State Rugby</title>
+  <meta name="description" content="Ohio State Rugby photo gallery. Game action, team photos, alumni events, and Buckeye Rugby memories.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: var(--gray-light);
+      transition: transform 0.2s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .gallery-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--gray-mid);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .gallery-placeholder span {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .gallery-category {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      padding: 24px 16px 12px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: var(--radius);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Oswald', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/osu-rugby-alumni-logo.jpeg" alt="OSU Rugby">
+        <span>Ohio State Rugby</span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../roster.html">Roster</a></li>
+        <li><a href="../schedule.html">Schedule</a></li>
+        <li><a href="../history.html">History</a></li>
+        <li><a href="../alumni/index.html">Alumni</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="../gallery/index.html" class="active">Gallery</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <p>Buckeye Rugby through the years</p>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Placeholder gallery items — replace with real photos -->
+      <div class="gallery-grid">
+
+        <div class="gallery-item" style="background:var(--scarlet);">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.6);">
+            <span>&#9917;</span>
+            <p style="font-size:0.8rem;">Game Action</p>
+          </div>
+          <div class="gallery-category">Match Day</div>
+        </div>
+
+        <div class="gallery-item" style="background:var(--gray-dark);">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.4);">
+            <span>&#9734;</span>
+            <p style="font-size:0.8rem;">Team Photos</p>
+          </div>
+          <div class="gallery-category">Team</div>
+        </div>
+
+        <div class="gallery-item" style="background:#2e7d32;">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.5);">
+            <span>&#127942;</span>
+            <p style="font-size:0.8rem;">Championships</p>
+          </div>
+          <div class="gallery-category">Big Ten Champions</div>
+        </div>
+
+        <div class="gallery-item" style="background:#1565c0;">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.5);">
+            <span>&#127881;</span>
+            <p style="font-size:0.8rem;">Alumni Events</p>
+          </div>
+          <div class="gallery-category">Alumni Weekend</div>
+        </div>
+
+        <div class="gallery-item" style="background:#6a1b9a;">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.5);">
+            <span>&#127941;</span>
+            <p style="font-size:0.8rem;">Hall of Fame</p>
+          </div>
+          <div class="gallery-category">Hall of Fame</div>
+        </div>
+
+        <div class="gallery-item" style="background:#e65100;">
+          <div class="gallery-placeholder" style="color:rgba(255,255,255,0.5);">
+            <span>&#128247;</span>
+            <p style="font-size:0.8rem;">Throwbacks</p>
+          </div>
+          <div class="gallery-category">History</div>
+        </div>
+
+      </div>
+
+      <p class="text-center" style="margin-top:32px; color:var(--gray-mid);">Photo gallery is being populated. Check back soon for game action, team photos, and alumni memories.</p>
+
+    </div>
+  </section>
+
+  <!-- SUBMIT PHOTOS -->
+  <section class="section section-gray">
+    <div class="container text-center" style="max-width:650px;">
+      <h2 class="section-title">Share Your Photos</h2>
+      <p style="margin-bottom:16px;">Have photos from your playing days, a recent match, or an alumni event? We'd love to add them to the gallery.</p>
+      <p style="margin-bottom:24px; color:var(--gray-mid);">Send your photos to the email below and we'll get them posted. Include the year, event, and any names you can identify.</p>
+      <a href="mailto:osurfcalumni@gmail.com?subject=Photo Submission for Gallery" class="btn btn-scarlet">Email Your Photos</a>
+    </div>
+  </section>
+
+  <!-- SOCIAL FEEDS -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 class="section-title">Follow Us for More</h2>
+      <p style="margin-bottom:24px; color:var(--gray-mid);">Catch the latest photos and videos on our social channels.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="https://www.instagram.com/buckeyerugby/" class="btn btn-scarlet" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/OhioStateRugby/" class="btn btn-outline" target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/OSURFCALUMNI/" class="btn btn-outline" target="_blank">Alumni Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox (for future use with real photos) -->
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Ohio State Rugby</h4>
+          <p style="font-size:0.9rem; margin-bottom:12px;">The Ohio State University<br>Men's Rugby Football Club<br>Columbus, Ohio</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/buckeyerugby/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/OhioStateRugby/" target="_blank">Facebook</a>
+            <a href="https://x.com/OSUrugby" target="_blank">X/Twitter</a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../roster.html">Roster</a></li>
+            <li><a href="../schedule.html">Schedule</a></li>
+            <li><a href="../history.html">History</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Alumni Society</h4>
+          <ul>
+            <li><a href="mailto:osurfcalumni@gmail.com">osurfcalumni@gmail.com</a></li>
+            <li><a href="https://www.facebook.com/OSURFCALUMNI/" target="_blank">Alumni Facebook</a></li>
+            <li><a href="https://www.osu.edu/alumni/get-involved/clubs-societies/mens-rugby-alumni-society" target="_blank">OSU Alumni Assoc.</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Coaching Staff</h4>
+          <ul>
+            <li>Tom Rooney — Head Coach</li>
+            <li>Peter Malcolm — Coach</li>
+            <li>Allan Hanson — Coach</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ohio State University Men's Rugby Football Club. Not affiliated with Ohio State Athletics.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Lightbox for future gallery images
+    document.querySelectorAll('.gallery-item img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        document.getElementById('lightbox-img').src = this.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
